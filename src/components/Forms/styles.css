@@ -172,6 +172,28 @@
   border: 2px solid #ddd;
   border-radius: 0.75rem;
   cursor: pointer;
+  width:100%;
+  transition: all 0.2s ease;
+
+}
+
+.select-input{
+  width: 20px;
+  height: 20px;
+  padding:10px;
+  width:250px;
+  height:40px;
+  border:1px solid #ccc;
+  border-radius:10px;
+  background:white;
+  cursor:pointer;
+
+}
+
+.gender-group{
+  display:flex;
+  flex-direction:column;
+  gap:0.5rem;
 }
 
 .addon-item.active {
@@ -180,10 +202,9 @@
 .addon-info{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  
-  gap: 0.25rem;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
 
 }
 /* -----buttons-----*/
@@ -295,6 +316,7 @@
   background: white;
   border-radius: 50%;
   padding: 2px;
+  cursor: not-allowed;
 }
 
 .step.disabled {
@@ -306,6 +328,7 @@
 .step.disabled .step-number {
   border-color: #d1d5db;
   color: #9ca3af;
+  cursor:not-allowed;
 }
 
 .mobile-stepper {

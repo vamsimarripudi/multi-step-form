@@ -4,7 +4,8 @@ import "./styles.css"
 import Step1 from "./Step1" 
 import Step2 from "./Step2" 
 import Step3 from "./Step3" 
-import Step4 from "./Step4"  
+import Step4 from "./Step4"
+import Step5 from "./Step5"  
 import ProgressBar from "../ProgressBar";
 
 const Forms = () => {   
@@ -16,7 +17,9 @@ const Forms = () => {
         email: "",     
         phone: "",     
         plan: "arcade",     
-        addOns: [],   
+        addOns: [],
+        gender:"",
+        
     })   
     const navigate = useNavigate()    
     
@@ -48,7 +51,10 @@ const Forms = () => {
             { number: 1, title: "Your Information", subtitle: "Your info" ,completed:false},     
             { number: 2, title: "Select Plan", subtitle: "Select plan" ,completed:false},     
             { number: 3, title: "Add-ons", subtitle: "Pick add-ons" ,completed:false},     
-            { number: 4, title: "Summary", subtitle: "Review" ,completed:false},   ]   
+            { number: 4, title: "Summary", subtitle: "Review" ,completed:false},   
+               
+        ]    
+
         return (     
         <div className="form-container">       
         <div className="form-sidebar">
@@ -85,7 +91,7 @@ const Forms = () => {
         </div>
         {/*-----------------Mobile Version-------------------*/}
         <div className="mobile-stepper">
-            {[1,2,3,4].map((step) => {
+            {[1,2,3,4,5].map((step) => {
                 const isDisabled = step !== 1 && !isComplete[step - 1];
 
                 return (
@@ -117,13 +123,17 @@ const Forms = () => {
             )}         
             {currentStep === 4 && (           
                 <Step4 formData={formData} updateFormData={updateFormData} />        
-            )}          
+            )}
+            
+
             <div className="form-buttons">          
                 {currentStep > 1 && (            
                     <button className="btn-back" onClick={handleBack}>              
                         Go Back             
                     </button>           
-                )}          
+                )}
+            
+
             <button className="btn-next" onClick={handleNext} disabled={!canProceed}>            
                     {currentStep === 4 ? "Confirm" : "Next Step"}           
             </button>         

@@ -29,6 +29,12 @@ const Step1 = ({ formData, updateFormData, onValidate }) => {
       if (!phoneRegex.test(value)) return "Invalid phone number";
     }
 
+    if(name === "gender"){
+        const validGenders = ["male", "female", "other"];
+        if (!validGenders.includes(value.toLowerCase())) return "Please select a valid gender";
+
+    }
+
     return "";
   };
 
@@ -55,6 +61,7 @@ const Step1 = ({ formData, updateFormData, onValidate }) => {
       formData.name &&
       formData.email &&
       formData.phone &&
+      formData.gender &&
       Object.values(errors).every((err) => err === "");
 
     onValidate(isValid);
@@ -67,7 +74,7 @@ const Step1 = ({ formData, updateFormData, onValidate }) => {
 
       {/* NAME */}
       <div className="form-group">
-        <label>Name</label>
+        <label>Name<span style={{ color: "red" }}>*</span></label>
         <input
           type="text"
           name="name"
@@ -84,7 +91,7 @@ const Step1 = ({ formData, updateFormData, onValidate }) => {
 
       {/* EMAIL */}
       <div className="form-group">
-        <label>Email Address</label>
+        <label>Email Address <span style={{ color: "red" }}>*</span></label>
         <input
           type="email"
           name="email"
@@ -101,7 +108,7 @@ const Step1 = ({ formData, updateFormData, onValidate }) => {
 
       {/* PHONE */}
       <div className="form-group">
-        <label>Phone Number</label>
+        <label>Phone Number<span style={{ color: "red" }}>*</span></label>
         <input
           type="tel"
           name="phone"
@@ -113,6 +120,26 @@ const Step1 = ({ formData, updateFormData, onValidate }) => {
         />
         {touched.phone && errors.phone && (
           <p className="error-text">{errors.phone}</p>
+        )}
+      </div>
+      {/**/}
+      <div className="gender-group">
+        <label className="name">Gender<span style={{ color: "red" }}>*</span></label>
+        <select
+          name="gender"
+          value={formData.gender}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          className={`select-input ${touched.gender && errors.gender ? "input-error" : ""}`}
+
+        >
+          <option value="">Select gender</option>
+          <option value="male">Male</option>    
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        {touched.gender && errors.gender && (
+          <p className="error-text">{errors.gender}</p>
         )}
       </div>
     </div>
