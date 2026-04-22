@@ -1,0 +1,75 @@
+.failure-container {   
+    display: flex;   
+    align-items: center;   
+    justify-content: center;   
+    min-height: 100vh;   
+    background: linear-gradient(135deg, #f0f4ff 0%, #f8f9ff 100%);   
+    padding: 2rem; 
+}  
+.failure-content {   
+    text-align: center;   
+    background: white;   
+    padding: 3rem;   
+    border-radius: 1rem;   
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);   
+    max-width: 500px; 
+}  
+.failure-icon {   
+    width: 80px;   
+    height: 80px;   
+    margin: 0 auto 1.5rem;   
+    background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);   
+    border-radius: 50%;   
+    display: flex;   
+    align-items: center;   
+    justify-content: center;   
+    color: white;   
+    font-size: 3rem;   
+    font-weight: bold; 
+}  
+.failure-content h1 {   
+    color: #1e3a5f;   
+    font-size: 2rem;   
+    margin-bottom: 1rem; 
+}  
+.failure-content p {   
+    color: #999;   
+    margin-bottom: 2rem;   
+    line-height: 1.6;   
+    font-size: 1rem; 
+}  
+.btn-retry, .btn-home-failure {   
+    display: block;   
+    width: 100%;   
+    padding: 1rem 2.5rem;   
+    background: #1e3a5f;   
+    color: white;   
+    border: none;   
+    border-radius: 0.5rem;   
+    font-size: 1rem;   
+    font-weight: 600;   
+    cursor: pointer;   
+    transition: all 0.3s ease;   
+    margin-bottom: 1rem; 
+}  
+.btn-home-failure {   
+    background: transparent;   
+    color: #999;   
+    border: 2px solid #ccc;   
+    margin-bottom: 0; 
+}  
+.btn-retry:hover {  
+    background: #2d5a8c;   
+    transform: translateY(-2px);   
+    box-shadow: 0 5px 20px rgba(30, 58, 95, 0.3); 
+}  
+.btn-retry:active {   
+    transform: translateY(0); 
+}  
+.btn-home-failure:hover {   
+    border-color: #1e3a5f;   
+    color: #1e3a5f; 
+}  
+.btn-home-failure:active {   
+    transform: translateY(0); 
+}
