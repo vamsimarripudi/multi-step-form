@@ -51,7 +51,7 @@ const Forms = () => {
     }   
 
     useEffect(()=> {
-        const url = "http://localhost:5000/formdata";
+        const url = "https://multi-step-server.onrender.com/formdata";
        const  options = {
             method: "POST",
             headers: {
@@ -68,7 +68,7 @@ const Forms = () => {
         .catch(error => {
             console.error("Error sending data:", error);
         })
-        
+
     }, [formData]);
 
 
