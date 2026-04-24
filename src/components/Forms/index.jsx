@@ -1,4 +1,4 @@
-import { useState } from "react" 
+import { useEffect, useState } from "react" 
 import { useNavigate,Link } from "react-router-dom" 
 import "./styles.css" 
 import Step1 from "./Step1" 
@@ -7,6 +7,8 @@ import Step3 from "./Step3"
 import Step4 from "./Step4"
 import Step5 from "./Step5"  
 import ProgressBar from "../ProgressBar";
+
+const uniqueId = Math.random().toString(36).substr(2, 9);
 
 const Forms = () => {   
     const [currentStep, setCurrentStep] = useState(1)  
@@ -19,6 +21,7 @@ const Forms = () => {
         plan: "arcade",     
         addOns: [],
         gender:"",
+        uniqueId:uniqueId,
         
     })   
     const navigate = useNavigate()    
@@ -46,6 +49,20 @@ const Forms = () => {
         setFormData({ ...formData, ...data }) 
         
     }   
+
+    useEffect(()=> {
+        const url = "https://multi-step-server.onrender.com/formdata";
+        options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+
+        }
+    }, [formData]);
+
+    
     localStorage.setItem("formData", JSON.stringify(formData))
         const steps = [    
             { number: 1, title: "Your Information", subtitle: "Your info" ,completed:false},     
