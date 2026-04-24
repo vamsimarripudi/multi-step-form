@@ -52,7 +52,7 @@ const Forms = () => {
 
     useEffect(()=> {
         const url = "https://multi-step-server.onrender.com/formdata";
-        options = {
+       const  options = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -62,7 +62,7 @@ const Forms = () => {
         }
     }, [formData]);
 
-    
+
     localStorage.setItem("formData", JSON.stringify(formData))
         const steps = [    
             { number: 1, title: "Your Information", subtitle: "Your info" ,completed:false},     
