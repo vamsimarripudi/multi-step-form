@@ -117,7 +117,7 @@ const Forms = () => {
         </div>
         {/*-----------------Mobile Version-------------------*/}
         <div className="mobile-stepper">
-            {[1,2,3,4,5].map((step) => {
+            {[1,2,3,4].map((step) => {
                 const isDisabled = step !== 1 && !isComplete[step - 1];
 
                 return (
