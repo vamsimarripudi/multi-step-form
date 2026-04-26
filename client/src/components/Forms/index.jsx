@@ -51,7 +51,7 @@ const Forms = () => {
     }   
 
     useEffect(()=> {
-        const url = "https://multi-step-server.onrender.com/formdata";
+        const url = "https://multi-step-form-7245.onrender.com/formdata";
        const  options = {
             method: "POST",
             headers: {
