@@ -10,11 +10,8 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors({
-  origin: 'https://multi-step.vamsimarripudi.tech',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
-}));
+
+app.use(cors());
 
 // -----------------------------
 // DB Connection
