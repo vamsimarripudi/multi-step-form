@@ -14,7 +14,7 @@ app.use(cors({
   origin: 'https://multi-step.vamsimarripudi.tech',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
-})));
+}));
 
 // -----------------------------
 // DB Connection
